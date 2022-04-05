@@ -29,6 +29,9 @@
             android:name=".MapsActivity"
             android:exported="true"
             android:label="@string/title_activity_maps">
+
+        </activity>
+        <activity android:name=".PantallaInicio" android:exported="true" android:theme="@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
