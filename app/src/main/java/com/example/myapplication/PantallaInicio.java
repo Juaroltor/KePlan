@@ -21,6 +21,6 @@ public class PantallaInicio extends Activity {
                 Intent intent = new Intent(PantallaInicio.this, MapsActivity.class);
                 startActivity(intent);
             }
-        }, 1000);
+        }, 500);
     }
 }
