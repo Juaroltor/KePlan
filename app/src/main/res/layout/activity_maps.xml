@@ -1,6 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,34 +5,58 @@
     android:layout_height="match_parent"
     tools:context=".MapsActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="410dp"
-        android:layout_height="731dp"
-        android:src="@drawable/ic_launcher_background" />
-
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="116dp"
-        android:layout_height="65dp"
-        android:text="Button" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-16dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00878787"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Hoy"
+                android:background="@color/purple_200"/>
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/purple_200"
+                android:onClick="buttonEntradasPress"
+                android:text="Entradas" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/purple_200"
+                android:text="Info" />
+        </LinearLayout>
 
         <fragment
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="619dp"
+            android:layout_height="565dp"
             tools:context=".MapsActivity" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00878787"
             android:orientation="horizontal">
 
             <Button
@@ -43,16 +64,18 @@
                 android:layout_width="181dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@color/purple_200"
+                android:onClick="buttonSalasPress"
                 android:text="Salas" />
-            android:onClick="buttonSalas"/>
 
             <Button
                 android:id="@+id/discotecas"
                 android:layout_width="181dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Discotecas" />
-            android:onClick="buttonDiscotecas"/>
+                android:onClick="buttonDiscotecasPress"
+                android:text="Discotecas"
+                android:background="@color/purple_200"/>
 
 
             <Button
@@ -60,7 +83,9 @@
                 android:layout_width="181dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="bares" />
+                android:onClick="buttonBares"
+                android:text="bares"
+                android:background="@color/purple_200"/>
 
 
         </LinearLayout>
