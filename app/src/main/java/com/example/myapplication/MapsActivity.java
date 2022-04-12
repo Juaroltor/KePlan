@@ -20,12 +20,18 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.net.URI;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
+    private Button link;
+
 
     public void buttonDiscotecasPress(View view){
+
+        mMap.clear();
 
         //Coordenadas de Antique
         LatLng antique = new LatLng(37.4050289, -6.0010657);
@@ -44,12 +50,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng lechic = new LatLng(37.3802592, -5.9774349);
         mMap.addMarker(new MarkerOptions().position(lechic).title("Le Chic Viapol").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
 
-
-
     }
 
     public void buttonEntradasPress(View view){
-        String url = "https://www.entradas.com/";
+        String _url = "https://www.entradas.com/";
+        Uri uri = Uri.parse(_url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
+
+    public void buttonHoyPress(View view){
+        String url = "https://www.google.es/maps/search/que+hacer+hoy+en+sevilla/@37.3872801,-5.9948767,17z/data=!3m1!4b1";
         Uri uri = Uri.parse(url);
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
@@ -57,6 +68,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public void buttonSalasPress(View view){
 
+        mMap.clear();
 
         //Coordenadas de Cosmos
         LatLng cosmos = new LatLng(37.3784644, -5.9743113);
@@ -78,7 +90,34 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng funclub = new LatLng(37.3970341, -5.994332);
         mMap.addMarker(new MarkerOptions().position(funclub).title("FUN CLUB").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 
+    }
 
+    public void buttonBares(View view){
+        mMap.clear();
+
+        //Coordenadas el Rinconcillo
+        LatLng rinconcillo = new LatLng(37.3933641, -5.9904862);
+        mMap.addMarker(new MarkerOptions().position(rinconcillo).title("El Rinconcillo").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        //Coordenadas de Antigua Taberna de las Escobas
+        LatLng escobas = new LatLng(37.3869633, -5.9953046);
+        mMap.addMarker(new MarkerOptions().position(escobas).title("Antigua Taberna de las Escobas").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        //Coordenadas de la Flor del Toranzo
+        LatLng flor = new LatLng(37.3877876, -5.9978398);
+        mMap.addMarker(new MarkerOptions().position(flor).title("La Flor del Toranzo").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        //Coordenadas de las Teresas
+        LatLng teresas = new LatLng(37.3859753, -5.9915018);
+        mMap.addMarker(new MarkerOptions().position(teresas).title("Las Teresas").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        //Coordenadas de Antigüedades Bar
+        LatLng antiguedades = new LatLng(37.3872716, -5.994332);
+        mMap.addMarker(new MarkerOptions().position(antiguedades).title("Antigüedades Bar").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+        //Coordenadas de Ovejas Negras Tapas
+        LatLng ovejas = new LatLng(37.3872716, -5.9948767);
+        mMap.addMarker(new MarkerOptions().position(ovejas).title("Ovejas Negras Tapas").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
 
     }
 
@@ -89,8 +128,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         View buttonDiscotecas = findViewById(R.id.discotecas);
         View buttonSalas = findViewById(R.id.salas);
         View buttonBares = findViewById(R.id.bares);
+/*
+        link = findViewById(R.id.btn_link);
 
-
+        link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri _link = Uri.parse(_url);
+                Intent i = new Intent(Intent.ACTION_VIEW,_link);
+                startActivity(i);
+            }
+        });*/
 
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -100,40 +148,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-/**
- *      buttonDiscotecas.setOnClickListener(new View.OnClickListener(){
- *         public void onClick(View v){
- *              LatLng antique = new LatLng(37.4050289, -6.0010657);
- *             mMap.addMarker(new MarkerOptions().position(antique).title("Antique"));
- * }
- });
- */
 
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
         LatLng seville = new LatLng(37.3826, -5.99629);
-        //LatLng RBB = new LatLng(37.353831918, -5.975496098);
-        //mMap.addMarker(new MarkerOptions().position(seville).title("Marker in Seville"));
-        //mMap.addMarker(new MarkerOptions().position(RBB).title("Musho Beti"));
+
         float zoomLevel = 13.0f;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(seville, zoomLevel));
-        //mMap.moveCamera(CameraUpdateFactory.newLatLng(RBB));
 
-        //LatLng antique = new LatLng(37.4050289, -6.0010657);
-        //mMap.addMarker(new MarkerOptions().position(antique).title("Antique"));
+        mMap.getUiSettings().setZoomControlsEnabled(true);
 
 
 
@@ -142,9 +169,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
-    public void buttonBares(View view){
-        Toast.makeText(this, "Bares Button CLicked", Toast.LENGTH_SHORT).show();
-    }
 
 
 }
