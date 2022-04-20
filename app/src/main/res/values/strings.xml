@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">KePlan</string>
     <string name="title_activity_maps">KePlan</string>
+    <string name="btn_info">Info</string>
+    <string name="contenido_info">Hola buenas tardes \nMusho Beti</string>
+
 </resources>

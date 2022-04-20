@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+        <activity
+            android:name=".Info2"
+            android:exported="true"
+            />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -17,16 +21,19 @@
         <activity
             android:name=".MapsActivity"
             android:exported="true"
-            android:label="@string/title_activity_maps">
-
-        </activity>
-        <activity android:name=".PantallaInicio" android:exported="true" android:theme="@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen">
+            android:label="@string/title_activity_maps"></activity>
+        <activity
+            android:name=".PantallaInicio"
+            android:exported="true"
+            android:theme="@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>

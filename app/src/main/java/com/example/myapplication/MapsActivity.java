@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import com.example.myapplication.databinding.ActivityMapsBinding;
@@ -64,6 +65,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Uri uri = Uri.parse(url);
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
+    }
+
+    public void buttonInfo(View view){
+        Intent i =  new Intent(this,Info2.class);
+        startActivity(i);
     }
 
     public void buttonSalasPress(View view){
