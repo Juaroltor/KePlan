@@ -36,7 +36,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         //Coordenadas de Antique
         LatLng antique = new LatLng(37.4050289, -6.0010657);
-        mMap.addMarker(new MarkerOptions().position(antique).title("Antique").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+        mMap.addMarker(new MarkerOptions().position(antique).title("Antique")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
 
         //Coordenadas de Uthopia
 
@@ -61,7 +62,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     public void buttonHoyPress(View view){
-        String url = "https://www.google.es/maps/search/que+hacer+hoy+en+sevilla/@37.3872801,-5.9948767,17z/data=!3m1!4b1";
+        String url = "https://www.google.es/maps/search/" +
+                "que+hacer+hoy+en+sevilla/@37.3872801,-5.9948767,17z/data=!3m1!4b1";
         Uri uri = Uri.parse(url);
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
@@ -78,7 +80,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         //Coordenadas de Cosmos
         LatLng cosmos = new LatLng(37.3784644, -5.9743113);
-        mMap.addMarker(new MarkerOptions().position(cosmos).title("Sala Cosmos").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mMap.addMarker(new MarkerOptions().position(cosmos).title("Sala Cosmos")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 
         //Coordenadas de Sala Even
         LatLng even = new LatLng(37.408385, -5.9887635);
@@ -103,7 +106,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         //Coordenadas el Rinconcillo
         LatLng rinconcillo = new LatLng(37.3933641, -5.9904862);
-        mMap.addMarker(new MarkerOptions().position(rinconcillo).title("El Rinconcillo").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+        mMap.addMarker(new MarkerOptions().position(rinconcillo).title("El Rinconcillo")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
 
         //Coordenadas de Antigua Taberna de las Escobas
         LatLng escobas = new LatLng(37.3869633, -5.9953046);
